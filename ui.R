@@ -2,7 +2,6 @@ library(shiny)
 source('prepareData.R')
 df <- prepareData()
 minDate <- min(df$Date_of_report)
-#maxDate <- max(df$Date_of_report)
 maxDate <- Sys.Date()
 
 
@@ -14,7 +13,6 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-            #textOutput(outputId = "yValue"),
             HTML(paste0("Covid19 figures will be plotted. 
                  Pick dates between ", minDate, " and ", maxDate, ".")),
             br(), br(),
@@ -37,8 +35,8 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
             plotOutput("distPlot"),
-            textOutput(outputId = "summary"),
-            textOutput(outputId = "update")
+            # textOutput(outputId = "summary"),
+            # textOutput(outputId = "update")
         )
     )
 )

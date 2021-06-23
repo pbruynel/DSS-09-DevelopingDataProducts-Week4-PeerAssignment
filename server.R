@@ -3,41 +3,38 @@ library(ggplot2)
 
 source('setYLabel.R')
 source('setTitle.R')
-source('setSummary.R')
 source('setSubtitle.R')
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-    print("Start server: only once")
     df <- prepareData()
-    #dataIsActual <- Sys.Date() < max(df$Date_of_report)
 
     output$distPlot <- renderPlot({
         # load data if necessary
         dataIsActual <- (Sys.Date() - ddays(2)) < max(df$Date_of_report)
-        print(paste("max date =", max(df$Date_of_report)))
+        # print(paste("max date =", max(df$Date_of_report)))
         # if user wants latest data and data is not actual, then load latest data
         # else if user wants local data and data is actual then load local data
         # else no action required
         if (input$actualData & !dataIsActual){
-            print("load actual data")
+            # print("load actual data")
             df <<- prepareData(update=TRUE)
             dataIsActual <- (Sys.Date() - ddays(2)) < max(df$Date_of_report)
-            print(paste0("Update = ", input$actualData, 
-                         "; data is actual = ", dataIsActual, 
-                         "; max date =", max(df$Date_of_report)))
+            # print(paste0("Update = ", input$actualData, 
+            #              "; data is actual = ", dataIsActual, 
+            #              "; max date =", max(df$Date_of_report)))
         } else if (!input$actualData & dataIsActual) {
-            print("load local data")
+            # print("load local data")
             df <<- prepareData(update=FALSE)
             dataIsActual <- (Sys.Date() - ddays(2)) < max(df$Date_of_report)
-            print(paste0("Update = ", input$actualData, 
-                         "; data is actual = ", dataIsActual, 
-                         "; max date =", max(df$Date_of_report)))
+            # print(paste0("Update = ", input$actualData, 
+            #              "; data is actual = ", dataIsActual, 
+            #              "; max date =", max(df$Date_of_report)))
         } else {
-            print("no action required")
-            print(paste0("Update = ", input$actualData, 
-                         "; data is actual = ", dataIsActual, 
-                         "; max date =", max(df$Date_of_report)))
+            # print("no action required")
+            # print(paste0("Update = ", input$actualData, 
+            #              "; data is actual = ", dataIsActual, 
+            #              "; max date =", max(df$Date_of_report)))
         }
 
         df <- df %>%
@@ -93,4 +90,3 @@ server <- function(input, output) {
     
 
 }
-
