@@ -45,7 +45,7 @@ server <- function(input, output) {
         
         plotTitle <- setTitle(yAxis)
         plotSubtitle <- setSubtitle(yAxis, input$dateRange[1], input$dateRange[2], df)
-        plotCaption <- "Source: RIVM Netherlands (https://data.rivm.nl/covid-19/) "
+        plotCaption <- "Source: RIVM Netherlands (https://data.rivm.nl/covid-19/)"
 
         # df %>%
         #     ggplot(aes(x=Date_of_report, y=input$y, group=Province, color=Province)) +
