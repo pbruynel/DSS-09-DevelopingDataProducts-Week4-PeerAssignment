@@ -46,7 +46,7 @@ ui <- fluidPage(
                                  This application is initially loading locally stored data however,
                                  for performance reasons. These locally stored data contain Covid19 figures up to June 17, 2021.
                                  You can load the latest figures by selecting the checkbox 'Load latest data'.
-                                 Note that it can take some time (10 - 20 seconds) for the data to be loaded and the plot to be refreshed."
+                                 Note that it can take some time (10 - 20 seconds) for the latest data to be loaded and the plot to be refreshed."
                                  ),
                         tabPanel("Covid19 figures", br(), plotOutput("distPlot")) 
             )
