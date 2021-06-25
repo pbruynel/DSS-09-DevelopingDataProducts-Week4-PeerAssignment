@@ -1,3 +1,4 @@
+# Composes the subtitle of the plot.
 setSubtitle <- function(yAxis, fromDate, toDate, df) {
     fromDate <- format(fromDate, "%d-%m-%Y")
     toDate <- format(toDate, "%d-%m-%Y")

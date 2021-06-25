@@ -1,5 +1,5 @@
+# Composes the title of the plot.
 setTitle <- function(yAxis) {
-    # Prepare the y label
     if (yAxis=="Total_reported") {
         title <- "Total reported number of positively tested people"
     } else if (yAxis=="Hospital_admission") {

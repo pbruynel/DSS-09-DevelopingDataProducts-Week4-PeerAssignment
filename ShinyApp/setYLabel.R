@@ -1,5 +1,5 @@
+# Composes the label of the y-axis.
 setYLabel <- function(yAxis) {
-    # Prepare the y label
     if (yAxis=="Total_reported") {
         yLabel <- "Total reported infections"
     } else if (yAxis=="Hospital_admission") {
