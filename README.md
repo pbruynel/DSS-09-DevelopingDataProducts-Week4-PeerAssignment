@@ -44,6 +44,9 @@ Your presentation must satisfy the following
 3. It must be hosted on github or Rpubs  
 4. It must contained some embedded R code that gets run when slidifying the document  
 
+## Code
+The code for the Shiny app is found in the ShinyApp map. The code for the Pitch is found in the ReproduciblePitch map.  
+
 ## Results
 The app is deployed on shinyapps.io. It is publicly available and can be started by using the following link:  
 https://f1cmhm-pbruynel.shinyapps.io/DSS-09-DevelopingDataProducts-Week4-PeerAssignment/  
