@@ -1,4 +1,5 @@
-# library(shiny)
+library(shiny)
+
 source('prepareData.R')
 
 df <- prepareData()

@@ -1,6 +1,6 @@
-# library(shiny)
-# library(ggplot2)
-# 
+library(shiny)
+library(ggplot2)
+
 source('setYLabel.R')
 source('setTitle.R')
 source('setSubtitle.R')
